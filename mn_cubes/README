@@ -1,0 +1,43 @@
+Contents :
+  * [DIR] bentley_ottmann/ : implementation of Bentley-Ottmann 
+    algorithm.
+  * [FILE] mncubes.cpp
+  * [FILE] Makefile
+  * [FILE] configure : configure the integer type basis
+  * [FILE] README
+
+
+1) Compile the program :
+  
+  $ ./configure
+
+See ./configure --help for options.
+
+  $ make
+
+This will create a executable named mncubes. Usage is :
+
+  $ ./mncubes [m] [n]
+
+The output contains several data. The last line has the form :
+
+  M_{m,n}^0 = [N]
+
+N is the number of m,n-cubes with shift 0.
+
+
+
+2) Make the documentation of Bentley-Ottmann algorithm :
+
+  $ make doc
+
+This will create the documentation in html. To read it :
+
+  $ [WEB BROWSER] bentley_ottmann/doc/html/index.html
+
+In order to have a documentation in pdf :
+
+  $ make doc_tex
+  $ [PDF VIEWER] bentley_ottmann/doc/latex/refman.pdf
+
+Note that making a pdf documentation also makes the html documentation 

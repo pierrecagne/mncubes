@@ -1,0 +1,35 @@
+Rote sequences generator representing m,n-cubes of plans through (0,0,0)
+
+Contents :
+	 README			This file.
+	 rote_generation.cpp	Source for the generator.
+	 Doxyfile		Configuration file for doxygen documentation.
+	 Makefile		Obvious.
+
+1) Requirements :
+Are required
+	CGAL
+	GMP
+	BOOST
+
+2) Compile the program :
+Do
+	$ make
+to produce the executable ./generator. (Executing it without arguments will display usage.)
+
+If the include files and libaries are not in the regular directories, modify the INCLUDES variable in Makefile (with flags -I and -L).
+
+
+3) Make the documentation :
+Do
+	$ make doc
+will produce html documentation and tex sources.
+
+To view html documentation, do :
+   	$ $BROWSER doc/html/index.html
+
+To produce pdf documentation, do :
+   	$ make pdf
+
+To view it, do :
+   	$ $PDFVIEWER doc/latex/refman.pdf

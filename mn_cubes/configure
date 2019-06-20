@@ -1,0 +1,38 @@
+#!/bin/sh
+
+if test -z "$1"
+then
+    echo "No option : integer type basis will be 'int'."
+    f_bigint=NO
+else
+    case $1 in
+	--with-bigint)
+	    shift; f_bigint=YES
+	    ;;
+	--without-bigint)
+	    shift; f_bigint=NO
+	    ;;
+	--help)
+	    cat <<EOF
+Usage : ./configure [options]
+(No option is equivalent to option --without-bigint.)
+
+Options :
+  --without-bigint : integer type basis will be 'int'.
+
+  --with-bigint : integer type basis will be an integer type with arbitrary precision.
+                  GMP is used by default.
+EOF
+	    ;;
+	*)
+	    echo 'Unvalid option. ./configure --help for any help.'
+	    ;;
+    esac
+fi
+
+if test "$f_bigint" = YES
+then
+    echo '#define USE_BIGINT true' > bentley_ottmann/integer_type.hpp
+else
+    echo '#define USE_BIGINT false' > bentley_ottmann/integer_type.hpp
+fi
